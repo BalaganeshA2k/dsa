@@ -31,16 +31,16 @@ public class FindElementInArrayTest {
 
     @Test
     void generic_solution_returns_index_if_target_found() {
-        int[] arr = { 1, 2, 3, 4, 5 };
-        int response = findElementInArray.solution(arr, 2);
+        Integer[] arr = { 1, 2, 3, 4, 5 };
+        int response = findElementInArray.genericSolution(arr, 2);
         int expectedResponse = 1;
         assertEquals(expectedResponse, response);
     }
 
     @Test
     void generic_solution_returns_negative_1_if_target_is_not_found() {
-        int[] arr = { 1, 2, 3, 4, 5 };
-        int response = findElementInArray.solution(arr, 10);
+        Integer[] arr = { 1, 2, 3, 4, 5 };
+        int response = findElementInArray.genericSolution(arr, 10);
         int expectedResponse = -1;
         assertEquals(expectedResponse, response);
     }
