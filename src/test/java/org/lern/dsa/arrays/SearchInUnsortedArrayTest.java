@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 public class FindElementInArrayTest {
-    private static FindElementInArray findElementInArray;
+    private static SearchInUnsortedArray findElementInArray;
 
     @BeforeAll
     static void setUp() {
-        findElementInArray = new FindElementInArray();
+        findElementInArray = new SearchInUnsortedArray();
     }
 
     @Test

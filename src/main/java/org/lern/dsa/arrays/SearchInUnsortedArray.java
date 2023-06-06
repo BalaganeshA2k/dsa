@@ -1,6 +1,6 @@
 package org.lern.dsa.arrays;
 
-public class FindElementInArray {
+public class SearchInUnsortedArray {
 
     public int solution(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++)
