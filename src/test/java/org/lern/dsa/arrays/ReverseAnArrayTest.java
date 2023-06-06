@@ -25,10 +25,26 @@ public class ReverseAnArrayTest {
     }
 
     @Test
+    void check_if_array_with_even_size_is_reversed_two_pointerMethod() {
+        int[] input = { 1, 2, 3, 4 };
+        int[] expectedOutput = { 4, 3, 2, 1 };
+        reverseAnArray.reverseInPlaceTwoPointerMethod(input);
+        assertArrayEquals(expectedOutput, input, () -> "array is not reversed in place");
+    }
+
+    @Test
     void check_if_array_with_odd_size_is_reversed() {
         int[] input = { 1, 2, 3, 4, 5 };
         int[] expectedOutput = { 5, 4, 3, 2, 1 };
         reverseAnArray.reverseInPlace(input);
+        assertArrayEquals(expectedOutput, input, () -> "array is not reversed in place");
+    }
+
+    @Test
+    void check_if_array_with_odd_size_is_reversed_two_pointerMethod() {
+        int[] input = { 1, 2, 3, 4, 5 };
+        int[] expectedOutput = { 5, 4, 3, 2, 1 };
+        reverseAnArray.reverseInPlaceTwoPointerMethod(input);
         assertArrayEquals(expectedOutput, input, () -> "array is not reversed in place");
     }
 
