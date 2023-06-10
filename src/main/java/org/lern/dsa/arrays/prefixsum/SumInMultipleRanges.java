@@ -24,7 +24,38 @@ public class SumInMultipleRanges {
     }
 
     public int[] sumInMultipleRangesPrefixSum(int[] arr, int[] from, int[] to) {
-        // TO DO implement using prefix sum
-        throw new UnsupportedOperationException();
+        int[] queryResult = new int[from.length];
+        int inputLength = arr.length;
+        int[] prefixSum = new int[inputLength];
+        prefixSum[0] = arr[0];
+        for (int i = 1; i < inputLength; i++)
+            prefixSum[i] = arr[i] + prefixSum[i - 1];
+        for (int i = 0; i < from.length; i++) {
+            int left = from[i];
+            int right = to[i];
+            if (left == 0)
+                queryResult[i] = prefixSum[right];
+            else
+                queryResult[i] = prefixSum[right] - prefixSum[left - 1];
+
+        }
+        return queryResult;
+    }
+
+    public int[] sumInMultipleRangesPrefixSumInPlace(int[] arr, int[] from, int[] to) {
+
+        int[] queryResult = new int[from.length];
+        for (int i = 1; i < arr.length; i++)
+            arr[i] = arr[i] + arr[i - 1];
+        for (int i = 0; i < from.length; i++) {
+            int left = from[i];
+            int right = to[i];
+            if (left == 0)
+                queryResult[i] = arr[right];
+            else
+                queryResult[i] = arr[right] - arr[left - 1];
+
+        }
+        return queryResult;
     }
 }

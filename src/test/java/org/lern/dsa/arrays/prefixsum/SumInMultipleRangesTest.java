@@ -1,6 +1,7 @@
 package org.lern.dsa.arrays.prefixsum;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -23,7 +24,7 @@ public class SumInMultipleRangesTest {
         int[] to = { 1, 4, 3 };
         int[] expectedResponse = { 3, 12, 4 };
         int[] actualResponse = sumInMultipleRanges.sumInMultipleRangesBruteForce(arr, from, to);
-        Assertions.assertArrayEquals(expectedResponse, actualResponse);
+        assertArrayEquals(expectedResponse, actualResponse);
 
     }
 
@@ -34,7 +35,19 @@ public class SumInMultipleRangesTest {
         int[] to = { 1, 4, 3 };
         int[] expectedResponse = { 3, 12, 4 };
         int[] actualResponse = sumInMultipleRanges.sumInMultipleRangesPrefixSum(arr, from, to);
-        Assertions.assertArrayEquals(expectedResponse, actualResponse);
+        assertArrayEquals(expectedResponse, actualResponse);
+
+    }
+
+    @Test
+    void prefixSumInPlaceApproachReturnsValidResults() {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int[] from = { 0, 2, 3 };
+        int[] to = { 1, 4, 3 };
+        int[] expectedResponse = { 3, 12, 4 };
+        int[] actualResponse = sumInMultipleRanges.sumInMultipleRangesPrefixSumInPlace(arr, from, to);
+        assertArrayEquals(expectedResponse, actualResponse);
+        assertArrayEquals(new int[] { 1, 3, 6, 10, 15 }, arr);
 
     }
 }
